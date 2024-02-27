@@ -38,7 +38,7 @@
 
 # [uneditable]
 
-# In[1]:
+# In[ ]:
 
 
 # Determine whether to start AIT or jupyter by startup argument
@@ -159,15 +159,15 @@ if not is_ait_launch:
     inventory_requirement_iris_data = manifest_genenerator.format_ait_inventory_requirement(format_=['csv'])
     manifest_genenerator.add_ait_inventories(name='alyz_data', 
                                              type_='dataset', 
-                                             description='分析対象の表データ(csv)\n1列目は属性名', 
+                                             description='分析対象の表データ(csv)\n 1列目は属性名', 
                                              requirement=inventory_requirement_iris_data)
     manifest_genenerator.add_ait_parameters(name='preferred_attributes', 
                                             type_='str', 
-                                            description='分析優先の属性(カンマ区切りで複数指定可能)\n※指定しない場合はNoneを入力', 
+                                            description='分析優先の属性(カンマ区切りで複数指定可能)\n ※指定しない場合はNoneを入力', 
                                             default_val='None')
     manifest_genenerator.add_ait_parameters(name='excluded_combinations', 
                                             type_='str', 
-                                            description='分析対象外の属性組み合わせリスト 入力例：[(属性A, 属性B), (属性C, 属性D)]\n※指定しない場合はNoneを入力', 
+                                            description='分析対象外の属性組み合わせリスト\n 入力例：(属性A, 属性B), (属性C, 属性D)\n ※指定しない場合はNoneを入力', 
                                             default_val='None')
     manifest_genenerator.add_ait_parameters(name='threshold_value', 
                                             type_='int', 
@@ -182,7 +182,7 @@ if not is_ait_launch:
                                            type_='picture', 
                                            description='各回組み合わせの統計結果の詳細の分布プロット')
     manifest_genenerator.add_ait_downloads(name='combination_counts_detail', 
-                                           description='各回組み合わせの統計結果の詳細 ※出力順はレコード数の降順')
+                                           description='各回組み合わせの統計結果の詳細\n 出力順はレコード数の降順')
     manifest_genenerator.add_ait_downloads(name='Log', 
                                            description='AIT実行ログ')
     manifest_path = manifest_genenerator.write()
@@ -201,9 +201,9 @@ if not is_ait_launch:
     input_generator.add_ait_inventories(name='alyz_data',
                                         value='BDD_labels_2036.csv')
     input_generator.set_ait_params(name='preferred_attributes',
-                                   value='Road type,Weather,Lighting,Obstacle')#
+                                   value='Road type,Weather,Lighting,Obstacle')
     input_generator.set_ait_params(name='excluded_combinations',
-                                   value='(Road type,Weather), (Road type,Lighting)')#
+                                   value='(Road type, Weather), (Road type, Lighting)')
     input_generator.set_ait_params(name='threshold_value',
                                    value=5)
     input_generator.write()

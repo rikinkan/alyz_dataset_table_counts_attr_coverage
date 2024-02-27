@@ -16,7 +16,7 @@
     {
       "name": "alyz_data",
       "type": "dataset",
-      "description": "分析対象の表データ(csv)\n1列目は属性名",
+      "description": "分析対象の表データ(csv)\n 1列目は属性名",
       "requirement": {
         "format": [
           "csv"
@@ -28,13 +28,13 @@
     {
       "name": "preferred_attributes",
       "type": "str",
-      "description": "分析優先の属性(カンマ区切りで複数指定可能)\n※指定しない場合はNoneを入力",
+      "description": "分析優先の属性(カンマ区切りで複数指定可能)\n ※指定しない場合はNoneを入力",
       "default_val": "None"
     },
     {
       "name": "excluded_combinations",
       "type": "str",
-      "description": "分析対象外の属性組み合わせリスト 入力例：[(属性A, 属性B), (属性C, 属性D)]\n※指定しない場合はNoneを入力",
+      "description": "分析対象外の属性組み合わせリスト\n 入力例：(属性A, 属性B), (属性C, 属性D)\n ※指定しない場合はNoneを入力",
       "default_val": "None"
     },
     {
@@ -65,7 +65,7 @@
   "downloads": [
     {
       "name": "combination_counts_detail",
-      "description": "各回組み合わせの統計結果の詳細 ※出力順はレコード数の降順"
+      "description": "各回組み合わせの統計結果の詳細\n 出力順はレコード数の降順"
     },
     {
       "name": "Log",
