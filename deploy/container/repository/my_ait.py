@@ -38,7 +38,7 @@
 
 # [uneditable]
 
-# In[ ]:
+# In[1]:
 
 
 # Determine whether to start AIT or jupyter by startup argument
@@ -331,10 +331,11 @@ def combination_counts_plot(combination_counts, file_name, file_path: str=None) 
     plt.title('Record Count by Attribute Combinations')
     plt.xticks([])
     plt.tight_layout()
-    plt.show()
 
     file_path = file_path +  file_name
     plt.savefig(file_path, bbox_inches='tight')
+    plt.show()
+
     return file_path
 
 
@@ -359,7 +360,6 @@ def alyz_result(combination_counts, file_path: str=None) -> str:
     rows = []
     for main_comb, sub_combs in combination_counts.items():
         for sub_comb, count in sub_combs.items():
-            # Main combination と Sub combination を結合
             combined_combination = f"{main_comb} - {sub_comb}"
             rows.append({'Combination': combined_combination, 'Count': count})
 
@@ -378,7 +378,7 @@ def alyz_result(combination_counts, file_path: str=None) -> str:
 
 
 @log(logger)
-@ait_main(ait_output, path_helper)
+@ait_main(ait_output, path_helper, is_ait_launch)
 def main() -> None:
     
     # load inventory
@@ -419,7 +419,7 @@ if __name__ == '__main__':
 
 # [required]
 
-# In[17]:
+# In[ ]:
 
 
 ait_owner='AIST'
@@ -430,7 +430,7 @@ ait_creation_year='2024'
 
 # [uneditable] 
 
-# In[18]:
+# In[ ]:
 
 
 if not is_ait_launch:
